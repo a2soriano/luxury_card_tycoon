@@ -1,0 +1,11 @@
+const { readFileSync, writeFileSync } = require('node:fs');
+const path = require('node:path');
+const root = path.resolve(__dirname, '..');
+let html = readFileSync(path.join(root, 'index.html'), 'utf8');
+const css = readFileSync(path.join(root, 'game.css'), 'utf8');
+const js = readFileSync(path.join(root, 'game.js'), 'utf8').replace(/<\/script/gi, '<\\/script');
+html = html.replace('<link rel="stylesheet" href="game.css">', () => `<style>\n${css}\n</style>`);
+html = html.replace('<script src="game.js"></script>', () => `<script>\n${js}\n</script>`);
+if (html.includes('src="game.js"') || html.includes('href="game.css"')) throw new Error('Bundling failed');
+writeFileSync(path.join(root, 'luxury-card-tycoon.html'), html);
+console.log('Created luxury-card-tycoon.html');

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Card Shop Tycoon 3</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap">
+
+
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="game.css">
+</head>
+<body>
+<div id="start" class="wrap"></div>
+
+<div id="game" hidden>
+  <header class="top">
+    <div class="wrap">
+      <div class="top-inner">
+        <div class="sign">
+          <div class="sign-mark" id="signMark">V</div>
+          <div style="min-width:0">
+            <h1 id="shopName">Shop</h1>
+            <div class="owners" id="owners"></div>
+          </div>
+        </div>
+        <div class="stats" id="stats"></div>
+        <div class="top-actions">
+          <button class="btn primary" data-act="nextDay" title="Shortcut: N">Next day</button>
+          <button class="btn" data-act="menu" aria-label="Menu">Menu</button>
+        </div>
+      </div>
+      <nav class="tabs" id="tabs" role="tablist"></nav>
+    </div>
+  </header>
+  <div class="wrap">
+    <div class="layout">
+      <main id="view"></main>
+      <aside id="detail" class="panel"></aside>
+    </div>
+  </div>
+</div>
+
+<div id="modals"></div>
+<div id="toasts" aria-live="polite"></div>
+
+<div id="inspector" hidden>
+  <canvas class="gl"></canvas>
+  <div class="css-host" hidden></div>
+  <div class="ins-top">
+    <div class="ins-title"><h2 id="insName"></h2><div id="insSub"></div></div>
+    <button class="btn" data-act="insClose">Close</button>
+  </div>
+  <div class="checklist panel" id="insCheck" hidden></div>
+  <div class="ins-bottom">
+    <div class="row" style="justify-content:center">
+      <button class="btn ins-btn" data-act="insFlip">Flip</button>
+      <button class="btn ins-btn" data-act="insEdge">Look at the edge</button>
+      <button class="btn ins-btn" data-act="insUV" id="insUVBtn">UV lamp</button>
+      <button class="btn ins-btn" data-act="insReset">Reset</button>
+    </div>
+    <div class="row" id="insActions" style="justify-content:center"></div>
+    <div class="ins-hint">Drag to turn it in your hand · double-click to flip · scroll or pinch to zoom · move the pointer to move the light</div>
+  </div>
+</div>
+<script src="game.js"></script>
+
+</body></html>

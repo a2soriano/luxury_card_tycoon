@@ -1,0 +1,18 @@
+{
+  "name": "luxury-card-tycoon",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A canvas and WebGL collectible card trading game",
+  "scripts": {
+    "start": "python3 -m http.server 8000 --bind 0.0.0.0",
+    "check": "node --check game.js",
+    "test": "node tests/browser-smoke.cjs",
+    "build": "node scripts/bundle.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.58.2"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
